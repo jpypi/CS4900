@@ -1,5 +1,6 @@
 \documentclass{article}
 
+\usepackage[table]{xcolor}
 
 \title{Quadratic Solver proposal}
 \date{2016-09-19}
@@ -14,10 +15,39 @@ Andrew Gifford}
     \pagenumbering{arabic}
 
     \section{Intro}
+    Build a CLI interface to give the roots of a quadratic equation.
 
     \section{Ownership and NDA}
     This project shall be open source and exist under no NDAs.
 
     \section{Stories}
+\begin{tabular}{*{11}{|c}}
+    \hline
+    Story                 & Confidence & Time Estimation & Notes \\ \hline
+    CLI Input             & 100\%      & & \\ \hline
+    Engineer Input format & 100\%      & & Some kind of exponential notation \\ \hline
+    Output format         & 100\%      & & \\ \hline
+    Precise calculation   &  90\%      & & \\
+
+    \hline
+    \multicolumn{4}{|c|}{\cellcolor{gray!50}Release 2}\\
+    \hline
+
+    GUI & & \\ \hline
+    Scriptable & & \\ \hline
+    Port to Windows & & \\ \hline
+    Port to OSX& & \\ \hline
+    %9& 2 & 0   & 0  & 1 & 3 & 1 & 0 & 3 & 6 & \cellcolor{green!50}83 \\ \hline
+
+\end{tabular}
+    \section{Non-Stories}
+
+\begin{tabular}{*{11}{|c}}
+    \hline
+    Item       & Value   \\ \hline
+    OS         & Linux   \\ \hline
+    Language   & C (GCC) \\ \hline
+%    \hline
+\end{tabular}
 
 \end{document}
