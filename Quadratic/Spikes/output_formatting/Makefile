@@ -1,6 +1,6 @@
 CC=gcc
-FILES=sqrt.c
-OUT=sqrt
+FILES=output.c
+OUT=output
 LIBS=-lm
 
 all: $(FILES)
