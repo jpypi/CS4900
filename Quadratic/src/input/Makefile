@@ -4,4 +4,4 @@ input.o: input.c input.h
 
 .PHONY: clean
 clean:
-	rm -f *.o
+	rm -f *.o *.gch
