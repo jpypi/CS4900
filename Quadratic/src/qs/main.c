@@ -4,18 +4,6 @@
 #include "output.h"
 #include "qsolve.h"
 
-int get_coeficient(char *prompt, double *ret_value){
-    char *buffer = NULL;
-
-    printf(prompt);
-
-    buffer = read_input(stdin);
-    *ret_value = parse_double(buffer);
-    free(buffer);
-
-    return 0;
-}
-
 
 int main(int argc, char *argv[]) {
     double a,b,c;

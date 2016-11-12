@@ -28,3 +28,17 @@ char * read_input(FILE * file) {
 
     return buffer;
 }
+
+/*
+ */
+int get_coeficient(char *prompt, double *ret_value){
+    char *buffer = NULL;
+
+    printf(prompt);
+
+    buffer = read_input(stdin);
+    *ret_value = parse_double(buffer);
+    free(buffer);
+
+    return 0;
+}
