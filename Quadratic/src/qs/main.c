@@ -1,27 +1,28 @@
+#include <stdlib.h>
 #include <stdio.h>
 #include "input.h"
 #include "output.h"
 #include "qsolve.h"
 
+int get_coeficient(char *prompt, double *ret_value){
+    char *buffer = NULL;
+
+    printf(prompt);
+
+    buffer = read_input(stdin);
+    *ret_value = parse_double(buffer);
+    free(buffer);
+
+    return 0;
+}
+
 
 int main(int argc, char *argv[]) {
-    char *buffer = NULL;
     double a,b,c;
 
-    printf("Input a:");
-    buffer = read_input(stdin);
-    a = parse_double(buffer);
-    free(buffer);
-
-    printf("Input b:");
-    buffer = read_input(stdin);
-    b = parse_double(buffer);
-    free(buffer);
-
-    printf("Input c:");
-    buffer = read_input(stdin);
-    c = parse_double(buffer);
-    free(buffer);
+    get_coeficient("Input a: ", &a);
+    get_coeficient("Input b: ", &b);
+    get_coeficient("Input c: ", &c);
 
     printf("%le %le %le\n", a, b, c);
 
