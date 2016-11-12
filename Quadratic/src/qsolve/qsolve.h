@@ -7,6 +7,6 @@
 
 /*
  */
-int qsolve(double a, double b, double c, double *r1, double *r2);
+int qsolve(double a, double b, double c, double *root1, double *root2);
 
 #endif
