@@ -12,10 +12,17 @@ int parse_abc(char *string, float *a, float *b, float *c) {
     return 0;
 }
 
+/*
+ */
+double parse_double(char *string) {
+    double res = 0;
+    sscanf(string, "%le", &res);
+    return res;
+}
 
 /*
  */
-char * read_abc(FILE * file) {
+char * read_input(FILE * file) {
     char *buffer = malloc(ABC_IN_BUFFER_SIZE);
     fgets(buffer, ABC_IN_BUFFER_SIZE, file);
 
