@@ -2,7 +2,8 @@
 #define _QSOLVE
 
 #define QSOLVE_IMG_ROOTS -1
-#define QSOLVE_OK 0
+#define QSOLVE_SINGLE_ROOT 1
+#define QSOLVE_DOUBLE_ROOT 2
 
 /*
  */
