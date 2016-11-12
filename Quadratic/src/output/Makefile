@@ -1,4 +1,4 @@
-output.o: output.c
+output.o: output.c | output.h
 	$(CC) $(CFLAGS) -c $^ $(LIBS)
 
 .PHONY: test

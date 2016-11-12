@@ -1,4 +1,4 @@
-qsolve.o: qsolve.c
+qsolve.o: qsolve.c | qsolve.h
 	$(CC) -c $^ $(CFLAGS) $(LIBS)
 
 ## Link the tests
