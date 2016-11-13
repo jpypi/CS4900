@@ -1,6 +1,6 @@
 
 input.o: input.c | input.h
-	$(CC) -c $^
+	$(CC) -Wno-format-nonliteral -c $^
 
 .PHONY: clean
 clean:
