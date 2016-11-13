@@ -1,4 +1,6 @@
 #include "qsolve.h"
+#include <math.h>
+
 /*
  * Return values:
  *  QSOLVE_X
