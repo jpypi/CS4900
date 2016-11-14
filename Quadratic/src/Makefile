@@ -3,11 +3,11 @@ CFLAGS=-Wall -pedantic -std=c99
 LIBS=-lm
 
 SUBDIRS=qs qsolve input output
-INCLUDE_DIRS=-I../qs -I../qsolve -I../input -I../output
+INCLUDE_DIRS=$(addprefix -I../,qs qsolve input output sqrt)
 
 export CC CFLAGS LIBS INCLUDE_DIRS
 
-.PHONY: all qs qsolve input output
+.PHONY: all qs qsolve input output sqrt
 qsolver: ${SUBDIRS}
 	$(CC) -o $@ qs/*.o qsolve/*.o input/*.o output/*.o $(CFLAGS) $(LIBS)
 
@@ -19,12 +19,16 @@ input:
 	$(MAKE) -C $@
 output:
 	$(MAKE) -C $@
+sqrt:
+	$(MAKE) -C $@
+
 
 .PHONY: test
 test:
 	for dir in $(SUBDIRS); do \
 		$(MAKE) -C $$dir test; \
 	done
+
 
 .PHONY: clean
 clean:
