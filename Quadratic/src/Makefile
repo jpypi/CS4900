@@ -9,20 +9,11 @@ CFLAGS += $(INCLUDE_DIRS)
 export CC CFLAGS LIBS INCLUDE_DIRS
 
 .PHONY: all $(SUBDIRS)
-qsolver: ${SUBDIRS}
+qsolver: $(SUBDIRS)
 	$(CC) -o $@ $(addsuffix /*.o,$(SUBDIRS)) $(CFLAGS) $(LIBS)
 
-qs:
+$(SUBDIRS):
 	$(MAKE) -C $@
-qsolve:
-	$(MAKE) -C $@
-input:
-	$(MAKE) -C $@
-output:
-	$(MAKE) -C $@
-sqrt:
-	$(MAKE) -C $@
-
 
 .PHONY: test
 test:
