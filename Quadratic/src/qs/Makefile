@@ -1,5 +1,5 @@
 main.o: main.c
-	$(CC) -c $^ $(CFLAGS) $(INCLUDE_DIRS) $(LIBS)
+	$(CC) -c $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 clean:

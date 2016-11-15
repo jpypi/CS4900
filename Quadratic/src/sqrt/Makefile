@@ -1,5 +1,5 @@
 sqrt.o: sqrt.c | sqrt.h
-	$(CC) -c $^ $(CFLAGS) $(INCLUDE_DIRS) $(LIBS)
+	$(CC) -c $^ $(CFLAGS) $(LIBS)
 
 .PHONY: clean
 clean:
