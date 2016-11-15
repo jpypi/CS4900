@@ -4,15 +4,20 @@
 #include "sqrt.h"
 
 /*
+ * Implements the quadradic formula to find the non-imaginary roots (zeros) (if
+ * they exist) of a degree 2 polynomial (aka a quadradic equation).
+ *     ax^2 + b*x + c = 0
+ * Below is the formula that is implemented:
+ *     -b +- sqrt(pow(b, 2) - 4*a*c) / 2*a
+ *
  * Return values:
- *  QSOLVE_X
- *  See qsolve.h for possible values
- *  -b +- sqrt(pow(b, 2) - 4*a*c) / 2*a
- *  ax^2 + b*x + c
+ *     QSOLVE_XXXX (where XXXX is a short abbreviated description of the
+ *     meaning)
+ *     See qsolve.h for full list of defined constant values.
  */
 int qsolve(double a, double b, double c, double *root1, double *root2) {
 #ifdef LOG_FILE
-    fprintf(LOG_FILE, "a:%le b:%le c:%le r1:%p r2%p\n", a, b, c, root1, root2);
+    fprintf(LOG_FILE, "qsolve: a:%le b:%le c:%le r1:%p r2%p\n", a, b, c, root1, root2);
 #endif
 
     int root_type = QSOLVE_DOUBLE_ROOT;
