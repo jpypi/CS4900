@@ -61,7 +61,7 @@ char * read_input(FILE * file) {
  * Wrapper function to helpfully output a prompt, read a double in from stdin
  * as ascii and write the double at the pointer: ret_value.
  */
-int get_coeficient(char *prompt, float *ret_value){
+int get_coeficient(char *prompt, double *ret_value){
 #ifdef LOG_FILE
     fprintf(LOG_FILE, "get_coeficient: prompt:%s ret_value:%p\n", prompt, ret_value);
 #endif
@@ -70,7 +70,7 @@ int get_coeficient(char *prompt, float *ret_value){
     printf("%s", prompt);
 
     buffer = read_input(stdin);
-    *ret_value = parse_float(buffer);
+    *ret_value = parse_double(buffer);
     free(buffer);
 
     return 0;
