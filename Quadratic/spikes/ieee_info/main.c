@@ -13,6 +13,8 @@ main(int argc, char *argv[]) {
     float b = 1.0;
     printf("Some subtraction:\n1.0 - 1.0 = %f\n", a - b);
 
+    printf("FLT_ROUNDS: %d\n", FLT_ROUNDS);
+
     printf("\nSingles:\n");
     printf("Max binary digits in significand: %d\n", FLT_MANT_DIG);
     printf("Max decimal digits precision: %d\n", FLT_DIG);
