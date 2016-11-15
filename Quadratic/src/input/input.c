@@ -33,6 +33,19 @@ double parse_double(char *string) {
 
 
 /*
+ * Parses a float from a character array (i.e. string)
+ */
+float parse_float(char *string) {
+#ifdef LOG_FILE
+    fprintf(LOG_FILE, "parse_float: string:%s\n", string);
+#endif
+    float res = 0;
+    sscanf(string, "%e", &res);
+    return res;
+}
+
+
+/*
  * Reads from a FILE into a buffer of ABC_IN_BUFFER_SIZE that gets mallocd.
  * The programmer should free this buffer when they are done with it.
  */
@@ -48,16 +61,16 @@ char * read_input(FILE * file) {
  * Wrapper function to helpfully output a prompt, read a double in from stdin
  * as ascii and write the double at the pointer: ret_value.
  */
-int get_coeficient(char *prompt, double *ret_value){
+int get_coeficient(char *prompt, float *ret_value){
 #ifdef LOG_FILE
     fprintf(LOG_FILE, "get_coeficient: prompt:%s ret_value:%p\n", prompt, ret_value);
 #endif
     char *buffer = NULL;
 
-    printf(prompt);
+    printf("%s", prompt);
 
     buffer = read_input(stdin);
-    *ret_value = parse_double(buffer);
+    *ret_value = parse_float(buffer);
     free(buffer);
 
     return 0;
