@@ -1,6 +1,5 @@
 #include <stdlib.h>
 #include <stdio.h>
-#include <float.h>
 #include "input.h"
 #include "output.h"
 #include "qsolve.h"
@@ -12,8 +11,8 @@ int main(int argc, char *argv[]) {
 
     get_coeficient("Input a: ", &a);
 
-    // TODO: THIS IS TERRIBAD FIX IT
-    if (daeq(a, 0.0, FLT_EPSILON*2)) {
+    // Is this safe/good enough?
+    if (daeq(a, 0.0, ALLOWABLE_ZERO_ERROR)) {
         printf("This equation is not processable by this program. Please choose\
  a > 0.\n");
         return 1;
