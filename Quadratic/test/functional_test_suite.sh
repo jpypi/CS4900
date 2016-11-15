@@ -33,7 +33,7 @@ TEST_SET_2="20"
 TEST_SET_2_DESCRIPTION="Let input values a and b be positive integers, but let c be a negative integer."
 TEST_SET_2_VALIDITY=${ALL_VALID_STRING}
 
-#### Test sets below don't currently exist ###
+#### Test sets below don't currently exist. Just here as stubs for now.###
 
 TEST_SET_3="30"
 TEST_SET_3_DESCRIPTION="Let input values a,b,c all be negative integers."
