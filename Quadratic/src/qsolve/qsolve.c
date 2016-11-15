@@ -2,6 +2,7 @@
 
 #include "qsolve.h"
 #include "sqrt.h"
+#include "validate.h"
 
 /*
  * Implements the quadradic formula to find the non-imaginary roots (zeros) (if
@@ -27,8 +28,8 @@ int qsolve(double a, double b, double c, double *root1, double *root2) {
     double four_a_c = four_a * c;
     double descriminate_pre = b_sq - four_a_c;
 
-    // TODO: THIS IS TERRABAD FIX IT
-    if (descriminate_pre == 0.0) {
+    // Is this safe/good enough?
+    if (daeq(a, 0.0, ALLOWABLE_ZERO_ERROR)) {
         root_type = QSOLVE_SINGLE_ROOT;
     } else if (descriminate_pre < 0) {
         return QSOLVE_IMG_ROOTS;
