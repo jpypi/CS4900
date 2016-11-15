@@ -1,17 +1,19 @@
 qsolve.o: qsolve.c | qsolve.h
 	$(CC) -c $^ $(CFLAGS) $(LIBS)
 
-## Link the tests
-#t1: t1.o
-#	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
-#t2: t2.o
-#	$(CC) -o $@ $(CFLAGS) $^ $(LIBS)
-#
-## Compile the tests
-#t1.o: t1.c
-#	$(CC) $(CFLAGS) -c $^ $(LIBS)
-#t2.o: t2.c
-#	$(CC) $(CFLAGS) -c $^ $(LIBS)
+
+.PHONY: test1 test2
+test1: test1.o qsolve.o mock_sqrt.o
+	$(CC) $^ $(CFLAGS)
+
+test2: test2.o qsolve.o
+	$(CC) $^ $(CFLAGS) $(LIBS)
+
+test1.o: test1.c | qsolve.h
+	$(CC) -c $^ $(CFLAGS) $(LIBS)
+test2.o: test2.c | qsolve.h
+	$(CC) -c $^ $(CFLAGS) $(LIBS)
+
 
 .PHONY: clean
 clean:
