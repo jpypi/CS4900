@@ -21,6 +21,8 @@ clean:
 
 .PHONY: test
 test: qsolve.o ../validate/validate.o ../sqrt/sqrt.o
-	@$(CC) -c unittests/unittests.c unittests/cunit.c
+	@$(CC) -c unittests/unittests.c unittests/cunit.c unittests/mockunittests.c unittests/mock_qsolve_sqrt.c
 	@$(CC) -o unittest qsolve.o unittests.o cunit.o ../validate/validate.o ../sqrt/sqrt.o $(LIBS) -lm
 	@./unittest
+	@$(CC) -o mockunittest qsolve.o mockunittests.o cunit.o ../validate/validate.o mock_qsolve_sqrt.o $(LIBS) -lm
+	@./mockunittest
