@@ -6,9 +6,11 @@ SUBDIRS=qs qsolve input output sqrt validate
 INCLUDE_DIRS=$(addprefix -I../,$(SUBDIRS))
 CFLAGS += $(INCLUDE_DIRS)
 
+TESTSUBDIRS=$(addsuffix test,$(SUBDIRS))
+
 export CC CFLAGS LIBS INCLUDE_DIRS
 
-.PHONY: all $(SUBDIRS)
+.PHONY: $(SUBDIRS)
 qsolver: $(SUBDIRS)
 	$(CC) -o $@ $(addsuffix /*.o,$(SUBDIRS)) $(CFLAGS) $(LIBS)
 
@@ -16,10 +18,10 @@ $(SUBDIRS):
 	$(MAKE) -C $@
 
 .PHONY: test
-test:
-	for dir in $(SUBDIRS); do \
-		$(MAKE) -C $$dir test; \
-	done
+test: $(TESTSUBDIRS)
+
+$(TESTSUBDIRS):
+	$(MAKE) -C $(subst test,,$@) test
 
 
 .PHONY: clean
