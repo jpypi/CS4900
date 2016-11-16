@@ -1,8 +1,8 @@
 #include <math.h>
 
 #include "qsolve.h"
-#include "sqrt.h"
-#include "validate.h"
+#include "../sqrt/sqrt.h"
+#include "../validate/validate.h"
 
 /*
  * Implements the quadradic formula to find the non-imaginary roots (zeros) (if

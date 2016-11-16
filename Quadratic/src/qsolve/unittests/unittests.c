@@ -16,7 +16,7 @@
 int main() {
 int	ret;     // return value from qsolve_roots
 // double  a, b, c; // scratch variables
-double  a,b,c,a1,b1,c1;  // scratch variables
+double  a,b,c,x1,x2,r1,r2;  // scratch variables
 
 
 // initialize the unit testing framework
@@ -26,18 +26,152 @@ cunit_init();
 // qsolve_roots() passes this one. ;-)
 // This allows about one base 10 least significant digit of error
 // (x - x1)*(x - x2) = 0
-a = 3.1;
-b = 3.3;
-c = 3.6;
-//ret = get_coeficient("a = ", &a1);
-//assert_eq("ret",ret,0);
-//ret = get_coeficient("b = ", &b1);
-//assert_eq("ret",ret,0);
-//ret = get_coeficient("c = ", &c1);
-//assert_eq("ret",ret,0);
-//assert_eq("ret",ret,2);
-//assert_feqrerr("a",a, a1, (double)FLT_MIN);
-//assert_feqrerr("b",b, b1, (double)FLT_MIN);
-//assert_feqrerr("c",c, c1, (double)FLT_MIN);
+
+
+x1 = -0.0085680;
+x2 = -3676.5;
+a = 2.0;
+b = 7353.0;
+c = 63.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, FLT_MIN);
+assert_feqrerr("x2", r2, x2, FLT_MIN);
+
+
+
+x1 = -1.0;
+x2 = -1.0;
+a = 1.0;
+b = 2.0;
+c = 1.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,QSOLVE_SINGLE_ROOT);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+
+x1 = -100.0;
+x2 = 0.01;
+a = 100.0;
+b = 9999.0;
+c = 100.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x2, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x1, 10.0*cunit_dmacheps );
+
+
+//good
+x1 = -1.0;
+x2 = -0.20;
+a = 5.0;
+b = 6.0;
+c = 1.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x2, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x1, 10.0*cunit_dmacheps );
+
+
+//good
+x1 = -4.56155281280883;
+x2 = -0.438447187191170;
+a = 1.0;
+b = 5.0;
+c = 2.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x2, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x1, 10.0*cunit_dmacheps );
+
+
+//good
+x1 = 4.64575131106459;
+x2 = -0.645751311064591;
+a = 1.0;
+b = -4.0;
+c = -3.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//good
+x1 = 2.0;
+x2 = -2.0;
+a = 1.0;
+b = 0.0;
+c = -4.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//good
+//x1 = 4.64575131106459;
+//x2 = -0.645751311064591;
+a = -1.0;
+b = -1.0;
+c = -1.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,QSOLVE_IMG_ROOTS);
+//assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+//assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//
+x1 = 0.000999998000008000;
+x2 = -500.000999998000;
+a = 2.0;
+b = 1000.0;
+c = -1.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//
+x1 = 4.64575131106459;
+x2 = -0.645751311064591;
+a = 1.0;
+b = -4.0;
+c = -3.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//
+x1 = 4.64575131106459;
+x2 = -0.645751311064591;
+a = 1.0;
+b = -4.0;
+c = -3.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+//
+x1 = 4.64575131106459;
+x2 = -0.645751311064591;
+a = 1.0;
+b = -4.0;
+c = -3.0;
+ret = qsolve(a,b,c, &r1, &r2);
+assert_eq("ret",ret,2);
+assert_feqrerr("x1", r1, x1, 10.0*cunit_dmacheps );
+assert_feqrerr("x2", r2, x2, 10.0*cunit_dmacheps );
+
+
+
+
 exit(0);
 }

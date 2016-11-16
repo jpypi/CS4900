@@ -22,5 +22,5 @@ clean:
 .PHONY: test
 test: qsolve.o ../validate/validate.o ../sqrt/sqrt.o
 	@$(CC) -c unittests/unittests.c unittests/cunit.c
-	@$(CC) -o unittest qsolve.o unittests.o cunit.o ../validate/validate.o ../sqrt/sqrt.o $(LIBS)
+	@$(CC) -o unittest qsolve.o unittests.o cunit.o ../validate/validate.o ../sqrt/sqrt.o $(LIBS) -lm
 	@./unittest
