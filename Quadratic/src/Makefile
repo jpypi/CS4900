@@ -2,7 +2,7 @@ CC=gcc
 CFLAGS=-Wall -pedantic -std=c99
 LIBS=-lm
 
-SUBDIRS=qs qsolve input output sqrt
+SUBDIRS=qs qsolve input output sqrt validate
 INCLUDE_DIRS=$(addprefix -I../,$(SUBDIRS))
 CFLAGS += $(INCLUDE_DIRS)
 
