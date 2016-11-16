@@ -21,11 +21,11 @@ PARTIAL_VALID_STRING="This test set contains both valid and invalid test cases."
 
 NUM_OF_TEST_SETS=3
 
-TEST_SET_0="1 2 3 4 5"
+TEST_SET_0="1 2 3 4 5 6"
 TEST_SET_0_DESCRIPTION="Let input values a,b,c all be positive integers."
 TEST_SET_0_VALIDITY=${ALL_VALID_STRING}
 
-TEST_SET_1="10 11"
+TEST_SET_1="10 11 12"
 TEST_SET_1_DESCRIPTION="Let input value a be a positive integer, but let b and c be negative integers."
 TEST_SET_1_VALIDITY=${ALL_VALID_STRING}
 
