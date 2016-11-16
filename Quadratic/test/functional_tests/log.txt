@@ -1,4 +1,4 @@
-Log generated on 2016-11-15. 
+Log generated on 2016-11-16. 
 
 
 
@@ -468,6 +468,52 @@ This test set contains only valid test cases.
 
 
 ||| TEST CASE 80 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #9
+
+
+Description for this test set:
+Attempt to break program by sending invaid data as input. Attempt to input 0 as a, characters other than numbers for input, empty string, ect.
+
+This test set contains only invalid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 90 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 91 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 92 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 93 |||
 
 
 TEST SUCCESSFULL!

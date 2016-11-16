@@ -1,0 +1,1 @@
+Input a: This equation is not processable by this program. Please choose a > 0.
