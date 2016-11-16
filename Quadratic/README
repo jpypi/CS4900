@@ -8,7 +8,8 @@ Know bugs:
 	sqrt mock object reports erronious value received in some cases
 
 Incomplete Parts:
-	Validation
+	Some validation checks not yet implemented
+	unit tests not complete for some modules
 
 
 Project contributers:
