@@ -1,2 +1,2 @@
-Input a: Input b: Input c: Root 1: -2.000000e+00
-Root 2: 2.000000e+00
+Input a: Input b: Input c: Root 1: -2.00000e+00
+Root 2: 2.00000e+00
