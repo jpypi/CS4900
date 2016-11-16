@@ -27,7 +27,22 @@ double parse_double(char *string) {
     fprintf(LOG_FILE, "parse_double: string:%s\n", string);
 #endif
     double res = 0;
-    sscanf(string, "%le", &res);
+    
+    /*
+	 * If input provided is anything other than a double (non numerical chars or
+	 * even an empty string) then abort.
+    */
+    
+    int err = sscanf(string, "%le", &res);
+    
+    if (err <= 0){
+		printf("Input provided is not a numerical value. Aborting\n");
+		exit(-1);
+    }
+	
+
+    //printf("\nERROR = %d\n",err);
+    
     return res;
 }
 
