@@ -22,10 +22,6 @@ double  a,b,c,a1,b1,c1;  // scratch variables
 // initialize the unit testing framework
 cunit_init();
 
-// A "good" unit test, need to allow for round off!
-// qsolve_roots() passes this one. ;-)
-// This allows about one base 10 least significant digit of error
-// (x - x1)*(x - x2) = 0
 a = 3.1;
 b = 3.3;
 c = 3.6;
@@ -39,5 +35,21 @@ assert_eq("ret",ret,0);
 assert_feqrerr("a",a, a1, (double)FLT_MIN);
 assert_feqrerr("b",b, b1, (double)FLT_MIN);
 assert_feqrerr("c",c, c1, (double)FLT_MIN);
+
+
+a = -0.1;
+b = -0.0001;
+c = -0.0000001;
+ret = get_coeficient("a = ", &a1);
+assert_eq("ret",ret,0);
+ret = get_coeficient("b = ", &b1);
+assert_eq("ret",ret,0);
+ret = get_coeficient("c = ", &c1);
+assert_eq("ret",ret,0);
+//assert_eq("ret",ret,2);
+assert_feqrerr("a",a, a1, (double)FLT_MIN);
+assert_feqrerr("b",b, b1, (double)FLT_MIN);
+assert_feqrerr("c",c, c1, (double)FLT_MIN);
 exit(0);
+
 }
