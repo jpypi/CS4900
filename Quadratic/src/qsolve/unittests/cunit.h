@@ -4,6 +4,7 @@
 
 extern FILE *cunit_log; 
 extern double cunit_dmacheps;
+extern double cunit_fmacheps;
 
 int cunit_init();
 
