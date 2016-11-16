@@ -92,14 +92,14 @@ executeTestSet()
 			echo "TEST FAILED!\nMore information shown below.\n\n" >> log.txt
 			
 			#diff_result=$( { diff "output_${TEST}.txt" "expected_output_${TEST}.txt"; } 2>&1 )
-			echo "Input:\n"
+			echo "Input:\n" >> log.txt
 			cat input_${TEST}.txt >> log.txt
-			echo "\n\nExpected output:\n"
+			echo "\nExpected output:\n" >> log.txt
 			cat expected_output_${TEST}.txt >> log.txt
-			echo "\n\nGenerated output:\n"
+			echo "\nGenerated output:\n" >> log.txt
 			cat output_${TEST}.txt >> log.txt
 
-			echo "${diff_result}" >> log.txt
+			#echo "${diff_result}" >> log.txt
 			echo "\n\n" >> log.txt
 		fi
 		
