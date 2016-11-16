@@ -19,7 +19,7 @@ ALL_VALID_STRING="This test set contains only valid test cases."
 ALL_INVALID_STRING="This test set contains only invalid test cases."
 PARTIAL_VALID_STRING="This test set contains both valid and invalid test cases."
 
-NUM_OF_TEST_SETS=6
+NUM_OF_TEST_SETS=9
 
 TEST_SET_0="1 2 3 4 5 6 7"
 TEST_SET_0_DESCRIPTION="Let input values a,b,c all be positive integers. Also tests having 0 as input value for b and/or c."
@@ -47,10 +47,21 @@ TEST_SET_5="50 51"
 TEST_SET_5_DESCRIPTION="Let input values a and c be negative integers, but let b be a positive integer."
 TEST_SET_5_VALIDITY=${ALL_VALID_STRING}
 
-TEST_SET_6="60"
+TEST_SET_6="60 61"
 TEST_SET_6_DESCRIPTION="Let a,b,c be positive floating point values."
 TEST_SET_6_VALIDITY=${ALL_VALID_STRING}
 
+TEST_SET_7="70 71"
+TEST_SET_7_DESCRIPTION="Let a,b,c be negative floating point values."
+TEST_SET_7_VALIDITY=${ALL_VALID_STRING}
+
+TEST_SET_8="80"
+TEST_SET_8_DESCRIPTION="Let a be a positive floating point value, but let b and c be negative floating point values."
+TEST_SET_8_VALIDITY=${ALL_VALID_STRING}
+
+TEST_SET_9="90"
+TEST_SET_9_DESCRIPTION="Attempt to break program by sending invaid data as input. Attempt to input 0 as a, characters other than numbers for input, empty string, ect."
+TEST_SET_9_VALIDITY=${ALL_INVALID_STRING}
 
 
 

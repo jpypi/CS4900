@@ -1,0 +1,476 @@
+Log generated on 2016-11-15. 
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #0
+
+
+Description for this test set:
+Let input values a,b,c all be positive integers. Also tests having 0 as input value for b and/or c.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 1 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 2 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 3 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 4 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 5 |||
+
+
+TEST FAILED!
+More information shown below.
+
+
+Input:
+
+2
+7353
+63
+
+
+Expected output:
+
+Input a: Input b: Input c: Root 1: -3.67649e+03
+Root 2: -8.56795e-03
+
+Generated output:
+
+Input a: Input b: Input c: Root 1: -3.67649e+03
+Root 2: -8.58495e-03
+
+
+
+--------------------------------------------------
+
+||| TEST CASE 6 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 7 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #1
+
+
+Description for this test set:
+Let input value a be a positive integer, but let b and c be negative integers.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 10 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 11 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 12 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #2
+
+
+Description for this test set:
+Let input values a and b be positive integers, but let c be a negative integer.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 20 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 21 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 22 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 23 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 24 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 25 |||
+
+
+TEST FAILED!
+More information shown below.
+
+
+Input:
+
+100
+99999
+-100
+
+Expected output:
+
+Input a: Input b: Input c: Root 1: -9.99991e+02
+Root 2: 1.00000e-03
+
+Generated output:
+
+Input a: Input b: Input c: Root 1: -9.99991e+02
+Root 2: 1.00798e-03
+
+
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #3
+
+
+Description for this test set:
+Let input values a,b,c all be negative integers.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 30 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 31 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 32 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 33 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 34 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 35 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 36 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 37 |||
+
+
+TEST FAILED!
+More information shown below.
+
+
+Input:
+
+-234506283263
+-5354325136
+-12192
+
+Expected output:
+
+Input a: Input b: Input c: Root 1: -2.28301e-02
+Root 2: -2.27726e-06
+
+Generated output:
+
+Input a: Input b: Input c: Root 1: -2.28301e-02
+Root 2: -2.27761e-06
+
+
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #4
+
+
+Description for this test set:
+Let input value a be a negative interger, but let b and c be positive integers.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 40 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 41 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #5
+
+
+Description for this test set:
+Let input values a and c be negative integers, but let b be a positive integer.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 50 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 51 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #6
+
+
+Description for this test set:
+Let a,b,c be positive floating point values.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 60 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 61 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #7
+
+
+Description for this test set:
+Let a,b,c be negative floating point values.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 70 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+
+||| TEST CASE 71 |||
+
+
+TEST FAILED!
+More information shown below.
+
+
+Input:
+
+-23.23
+-323.02
+-0.3
+
+Expected output:
+
+Input a: Input b: Input c: Root 1: -1.39044e+01
+Root 2: -9.28797e-04
+
+Generated output:
+
+Input a: Input b: Input c: Root 1: -1.39044e+01
+Root 2: -9.29008e-04
+
+
+
+--------------------------------------------------
+
+
+
+==================================================
+==================================================
+
+
+EXECUTING TEST SET #8
+
+
+Description for this test set:
+Let a be a positive floating point value, but let b and c be negative floating point values.
+
+This test set contains only valid test cases.
+
+--------------------------------------------------
+
+
+
+||| TEST CASE 80 |||
+
+
+TEST SUCCESSFULL!
+
+--------------------------------------------------
+

@@ -1,0 +1,7 @@
+1 = Results in 2 different roots which can both be represented as integers (-2 and -1).
+2 = Results in 2 different roots as doubles. Both are negative.
+3 = Results in an answer with no real roots.
+4 = Results in imaginary roots.
+5 = Results in 2 different roots as doubles.
+
+
