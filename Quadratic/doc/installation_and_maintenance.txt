@@ -1,0 +1,5 @@
+This project compiles into a single binary called 'qsolver' by running make in the src directory.
+
+Any updates can be downloaded using 'git pull' and running 'make' in the src directory to recompile the binary.
+
+In the event of difficulties compiling or recompiling the binary, try running 'make clean' in the src directory.

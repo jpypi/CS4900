@@ -1,0 +1,9 @@
+Functional tests are held in the test directory separate from src.
+
+The program binary must be compiled before functional tests can be run.
+The binary can be compiled by running 'make' in the src directory.
+
+Functional tests can be run with 'test/functional_tests/functional_test_suite.sh' from the project's root directory.
+
+Results of the functional tests are written to log.txt.
+These can be read by running 'less test/functional_tests/log.txt' in the project's root directory.

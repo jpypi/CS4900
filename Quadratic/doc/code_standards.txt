@@ -1,0 +1,9 @@
+The linux kernel C coding standards are used for this project.
+The standard can be found at https://www.kernel.org/doc/Documentation/CodingStyle
+
+ADDENDUMS
+1. All methods should employ argument validation
+2. All methods should employ optional argument logging
+3. All methods should have a comment block that describes the purpose of the method
+    and lists all in and out variables with their uses
+
