@@ -21,7 +21,7 @@ PARTIAL_VALID_STRING="This test set contains both valid and invalid test cases."
 
 NUM_OF_TEST_SETS=3
 
-TEST_SET_0="1"
+TEST_SET_0="1 2 3"
 TEST_SET_0_DESCRIPTION="Let input values a,b,c all be positive integers."
 TEST_SET_0_VALIDITY=${ALL_VALID_STRING}
 
@@ -91,8 +91,14 @@ executeTestSet()
 		else
 			echo "TEST FAILED!\nMore information shown below.\n\n" >> log.txt
 			
-			diff_result=$( { diff "output_${TEST}.txt" "expected_output_${TEST}.txt"; } 2>&1 )
-			
+			#diff_result=$( { diff "output_${TEST}.txt" "expected_output_${TEST}.txt"; } 2>&1 )
+			echo "Input:\n"
+			cat input_${TEST}.txt >> log.txt
+			echo "\n\nExpected output:\n"
+			cat expected_output_${TEST}.txt >> log.txt
+			echo "\n\nGenerated output:\n"
+			cat output_${TEST}.txt >> log.txt
+
 			echo "${diff_result}" >> log.txt
 			echo "\n\n" >> log.txt
 		fi
