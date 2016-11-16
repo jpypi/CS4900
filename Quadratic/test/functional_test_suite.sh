@@ -19,7 +19,7 @@ ALL_VALID_STRING="This test set contains only valid test cases."
 ALL_INVALID_STRING="This test set contains only invalid test cases."
 PARTIAL_VALID_STRING="This test set contains both valid and invalid test cases."
 
-NUM_OF_TEST_SETS=3
+NUM_OF_TEST_SETS=6
 
 TEST_SET_0="1 2 3 4 5 6 7"
 TEST_SET_0_DESCRIPTION="Let input values a,b,c all be positive integers. Also tests having 0 as input value for b and/or c."
@@ -35,20 +35,26 @@ TEST_SET_2_VALIDITY=${ALL_VALID_STRING}
 
 #### Test sets below don't currently exist. Just here as stubs for now.###
 
-TEST_SET_3="30"
+TEST_SET_3="30 31 32 33 34 35 36 37"
 TEST_SET_3_DESCRIPTION="Let input values a,b,c all be negative integers."
 TEST_SET_3_VALIDITY=${ALL_VALID_STRING}
 
-TEST_SET_4="40"
+TEST_SET_4="40 41"
 TEST_SET_4_DESCRIPTION="Let input value a be a negative interger, but let b and c be positive integers."
 TEST_SET_4_VALIDITY=${ALL_VALID_STRING}
 
-TEST_SET_5="50"
+TEST_SET_5="50 51"
 TEST_SET_5_DESCRIPTION="Let input values a and c be negative integers, but let b be a positive integer."
 TEST_SET_5_VALIDITY=${ALL_VALID_STRING}
 
 TEST_SET_6="60"
-TEST_SET_6_DESCRIPTION=" "
+TEST_SET_6_DESCRIPTION="Let a,b,c be positive floating point values."
+TEST_SET_6_VALIDITY=${ALL_VALID_STRING}
+
+
+
+
+
 
 ##############################################################################
 ##############################################################################
