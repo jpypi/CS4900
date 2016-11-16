@@ -1,0 +1,8 @@
+Rules for making changes to the project with git.
+
+1. Don't push if you broke something.
+2. Keep your commits as small as reasonably possible.
+3. Before committing run unit tests on anything you changed plus functional tests.
+    If you broke anything, refer to rule 1.
+4. Pull regularly to avoid conflicts in your commit.
+

@@ -1,0 +1,5 @@
+All relevent module directories should have a 'unittests' subdirectory.  This directory should containall extra files required for unit testing including a unittest.c file.
+
+'make test' can be run in the module's directory to compile and run the unit tests for that module.
+
+Additionally 'make test' can be run in the src directory to recursively run unit tests on all module directories.
