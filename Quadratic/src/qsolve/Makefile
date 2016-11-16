@@ -18,3 +18,9 @@ test2.o: test2.c | qsolve.h
 .PHONY: clean
 clean:
 	rm -f *.o
+
+.PHONY: test
+test: qsolve.o ../validate/validate.o ../sqrt/sqrt.o
+	@$(CC) -c unittests/unittests.c unittests/cunit.c
+	@$(CC) -o unittest qsolve.o unittests.o cunit.o ../validate/validate.o ../sqrt/sqrt.o $(LIBS)
+	@./unittest

@@ -6,3 +6,9 @@ test:
 
 clean:
 	rm -f *.o
+
+.PHONY: test
+test: output.o
+	@$(CC) -c unittests/unittests.c unittests/cunit.c
+	@$(CC) -o unittest output.o unittests.o cunit.o
+	@./unittest

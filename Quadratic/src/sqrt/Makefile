@@ -4,3 +4,7 @@ sqrt.o: sqrt.c | sqrt.h
 .PHONY: clean
 clean:
 	rm -f *.o
+
+.PHONY: test
+test:
+	

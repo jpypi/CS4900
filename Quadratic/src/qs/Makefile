@@ -4,3 +4,7 @@ main.o: main.c
 .PHONY: clean
 clean:
 	rm -f *.o
+
+.PHONY: test
+test: 
+	
