@@ -31,7 +31,7 @@ int main(int argc, char *argv[]) {
     } else if (res == QSOLVE_SINGLE_ROOT) {
         output = double_root_str(root1);
     } else {
-        output = "Well, y' dun goof'd\n";
+        output = "Unable to compute real roots!\n";
         printf("%s", output);
     }
 
