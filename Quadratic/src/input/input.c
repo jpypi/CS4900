@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include "validate.h"
 
 
 #define ABC_IN_BUFFER_SIZE 80
@@ -27,22 +28,7 @@ double parse_double(char *string) {
     fprintf(LOG_FILE, "parse_double: string:%s\n", string);
 #endif
     double res = 0;
-    
-    /*
-	 * If input provided is anything other than a double (non numerical chars or
-	 * even an empty string) then abort.
-    */
-    
-    int err = sscanf(string, "%le", &res);
-    
-    if (err <= 0){
-		printf("Input provided is not a numerical value. Aborting\n");
-		exit(-1);
-    }
-	
 
-    //printf("\nERROR = %d\n",err);
-    
     return res;
 }
 
@@ -85,6 +71,7 @@ int get_coeficient(char *prompt, double *ret_value){
     printf("%s", prompt);
 
     buffer = read_input(stdin);
+    validate_double_input(buffer);
     *ret_value = parse_double(buffer);
     free(buffer);
 

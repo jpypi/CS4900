@@ -7,4 +7,6 @@
 
 int daeq(double a, double b, double aerror);
 
+int validate_double_input(char *string);
+
 #endif
