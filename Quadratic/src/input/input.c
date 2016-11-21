@@ -29,6 +29,8 @@ double parse_double(char *string) {
 #endif
     double res = 0;
 
+    sscanf(string, "%le", &res);
+
     return res;
 }
 
