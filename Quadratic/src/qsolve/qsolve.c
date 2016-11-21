@@ -29,7 +29,7 @@ int qsolve(double a, double b, double c, double *root1, double *root2) {
     double descriminate_pre = b_sq - four_a_c;
 
     // Is this safe/good enough?
-    if (daeq(a, 0.0, ALLOWABLE_ZERO_ERROR)) {
+    if (daeq(descriminate_pre, 0.0, ALLOWABLE_ZERO_ERROR)) {
         root_type = QSOLVE_SINGLE_ROOT;
     } else if (descriminate_pre < 0) {
         return QSOLVE_IMG_ROOTS;
