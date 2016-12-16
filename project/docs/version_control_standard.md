@@ -22,3 +22,6 @@ https://sandofsky.com/blog/git-workflow.html
     - Make sure unit tests exist for new code
     - Unit tests run, and pass before pushing to master
     - Code in progress can reside in non-master branches
+
+## authors
+James Jenkins
