@@ -1,4 +1,5 @@
 # Automation Standard
+This document describes how automation will be implemented and used in this project.
 
 ## Automation system
 This project uses make for automation.
@@ -14,3 +15,5 @@ This project uses make for automation.
 - All Makefiles must use the rule 'clean' to clean the directory.
 - All Makefiles must use the rule 'test' to run all unit tests for the directory.
 
+## Authors
+Andrew Gifford

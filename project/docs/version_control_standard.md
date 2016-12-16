@@ -1,4 +1,5 @@
 # Version Control Standard
+This document describes how version control will be implemented and used in this project.
 
 ## Version Control System
 git
