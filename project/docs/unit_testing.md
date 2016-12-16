@@ -50,12 +50,5 @@ As folllows, guidelines for the project are set taking the principles in conside
 - Guidelines:
 	- Unit tests shall be written within a reasonable time after the corresponding function that needs to be tested is created.
 
-
-
-
-
-
-
-
-
-
+## Authors
+Aleks Dobrev
