@@ -1,0 +1,90 @@
+
+project(*Common) : dcps {
+  sharedname     = telemetryMessageCommon
+  dynamicflags   = TELEMETRYCOMMON_BUILD_DLL
+  libout         = .
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+  after    += Svc_Utils
+  includes      += $(TAO_ROOT)/orbsvcs
+  idlflags      += -I$(TAO_ROOT)/orbsvcs \
+                   -Wb,export_macro=pcmCommon_Export \
+                   -Wb,export_include=pcmCommon_Export.h
+  dcps_ts_flags += -Wb,export_macro=pcmCommon_Export
+
+  TypeSupport_Files {
+    Telemetry.idl
+  }
+
+  IDL_Files {
+    telemetryTypeSupport.idl
+    Telemetry.idl
+  }
+
+  // We only want the generated files
+  Header_Files {
+  }
+
+  // We only want the generated files
+  Source_Files {
+  }
+}
+
+project(*Publisher) : dcpsexe, dcps_tcp, svc_utils {
+  after    += *Common
+  exename   = publisher
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+
+  includes += $(TAO_ROOT)/orbsvcs
+  libs     += telemetryMessageCommon
+
+  IDL_Files {
+  }
+
+  TypeSupport_Files {
+  }
+
+  Header_Files {
+  }
+
+  Source_Files {
+    publisher.cpp
+  }
+
+  Documentation_Files {
+    dds_tcp_conf.ini
+    dds_udp_conf.ini
+  }
+}
+
+
+project(*Subscriber) : dcpsexe, dcps_tcp {
+  after    += *Common
+  exename   = subscriber
+  requires += tao_orbsvcs
+  requires += no_opendds_safety_profile
+
+  includes += $(TAO_ROOT)/orbsvcs
+  libs     += telemetryMessageCommon
+
+  TypeSupport_Files {
+  }
+
+  IDL_Files {
+  }
+
+  Header_Files {
+    telemetryMessageDataReaderListenerImpl.h
+  }
+
+  Source_Files {
+    telemetryMessageDataReaderListenerImpl.cpp
+    subscriber.cpp
+  }
+
+  Documentation_Files {
+    dds_tcp_conf.ini
+    dds_udp_conf.ini
+  }
+}
