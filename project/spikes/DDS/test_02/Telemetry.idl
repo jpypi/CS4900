@@ -7,25 +7,25 @@
 
 module telemetryM
 {
-#pragma DCPS_DATA_TYPE "pc::pcm"
-#pragma DCPS_DATA_KEY "pc::pcm id"
+#pragma DCPS_DATA_TYPE "telemetryM::telemetryMessage"
+#pragma DCPS_DATA_KEY "telemetryM::telemetryMessage id"
 
 	struct telemetryMessage {
 	long id;
 	// time_usec	uint64_t	Timestamp (microseconds, synced to UNIX time or since system boot)
-	float xacc		// X acceleration (m/s^2)
-	float yacc		// Y acceleration (m/s^2)
-	float zacc		// Z acceleration (m/s^2)
-	float xgyro		// Angular speed around X axis (rad / sec)
-	float ygyro		// Angular speed around Y axis (rad / sec)
-	float zgyro		// Angular speed around Z axis (rad / sec)
-	float xmag		// X Magnetic field (Gauss)
-	float ymag		// Y Magnetic field (Gauss)
-	float zmag		// Z Magnetic field (Gauss)
-	float abs_pressure		// Absolute pressure in millibar
-	float diff_pressure		// Differential pressure in millibar
-	float pressure_alt		// Altitude calculated from pressure
-	float temperature		// Temperature in degrees celsius
+	float xacc;		// X acceleration (m/s^2)
+	float yacc;		// Y acceleration (m/s^2)
+	float zacc;		// Z acceleration (m/s^2)
+	float xgyro;		// Angular speed around X axis (rad / sec)
+	float ygyro;		// Angular speed around Y axis (rad / sec)
+	float zgyro;		// Angular speed around Z axis (rad / sec)
+	float xmag;		// X Magnetic field (Gauss)
+	float ymag;		// Y Magnetic field (Gauss)
+	float zmag;		// Z Magnetic field (Gauss)
+	float abs_pressure;		// Absolute pressure in millibar
+	float diff_pressure;		// Differential pressure in millibar
+	float pressure_alt;		// Altitude calculated from pressure
+	float temperature;		// Temperature in degrees celsius
 	TimeBase::TimeT timestamp;
 };
 

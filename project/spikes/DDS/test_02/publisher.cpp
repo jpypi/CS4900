@@ -142,7 +142,7 @@ int ACE_TMAIN (int argc, ACE_TCHAR *argv[]) {
 	  msg.xacc = 1200.0 + 10.0*i;
 	  msg.timestamp = get_timestamp();
 
-      cout << "Publishing msg: " << msg.value << endl;
+      cout << "Publishing msg: " << msg.xacc << endl;
       ret = telemetryMessage_dw->write(msg, spy_handle);
       if (ret != DDS::RETCODE_OK) {
         ACE_ERROR ((LM_ERROR, ACE_TEXT("(%P|%t) ERROR: SPY write returned %d.\n"), ret));

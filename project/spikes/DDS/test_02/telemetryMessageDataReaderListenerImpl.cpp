@@ -40,7 +40,7 @@ void telemetryMessageDataReaderListenerImpl::on_data_available(DDS::DataReader_p
       if (status == DDS::RETCODE_OK && si.valid_data) {
         ++count;
         cout << "msg:   id        = " << msg.id	      << endl
-             << "       value     = " << msg.xacc           << endl
+ //            << "       value     = " << msg.xacc           << endl
              << "       timestamp = " << msg.timestamp      << endl;
         cout << "SampleInfo.sample_rank        = " << si.sample_rank << endl;
         cout << "SampleInfo.instance_handle    = " << hex << si.instance_handle << endl;
