@@ -88,91 +88,73 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
         float angle;
         float power;
     }
-    
-    
-    
-    
-    
-----------------------------------------------------
+```
 
-*** Open this file in a text editor that supports formatting and can display > 60 chars per line ***
-#
-# Created by: Aleksandr Dobrev
-#
+---
 
-Vision Processing Module - Getting Started
--------------------------------------------
+## Vision Processing Module
 
-> Environment:
-	
-	> Main Software Requirements:
-		- Kinect for Windows SDK v2.0
-		- Point Cloud Library 1.8.0
-		- Visual Studio Community 2015
-		- CMake 3.5.0
-		- Kinect2Grabber
+### Environment
+#### Main Software Requirements
+- Kinect for Windows SDK v2.0
+- Point Cloud Library 1.8.0
+- Visual Studio Community 2015
+- CMake 3.5.0
+- Kinect2Grabber
 
-	> Software details:
-		- Kinect for Windows SDK v2.0
-			= Provides drivers and many examples on reading data from Kinect v2 sensor.
-		- Point Cloud Library 1.8.0
-			= The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing.
-		- Visual Studio Community 2015
-			= An integrated development environment (IDE) from Microsoft
-		- CMake 3.5.0
-			= CMake is an open-source, cross-platform family of tools designed to build, test and package software. 
-			= CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
-		- Kinect2Grabber
-			= Kinect2Grabber is Grabber of PCL(Point Cloud Library) to retrieve the point cloud data from Kinect v2 using Kinect for Windows SDK v2.x.
-			= This Grabber only depend on Kinect for Windows SDK v2.x.
-	
-	> Some additional dependencies of software listed above:
-		* These get installed using the PCL 1.8.0 prebuilt installer.
+#### Software details
+- Kinect for Windows SDK v2.0
+	= Provides drivers and many examples on reading data from Kinect v2 sensor.
+- Point Cloud Library 1.8.0
+	= The Point Cloud Library (PCL) is a standalone, large scale, open project for 2D/3D image and point cloud processing.
+- Visual Studio Community 2015
+	= An integrated development environment (IDE) from Microsoft
+- CMake 3.5.0
+	= CMake is an open-source, cross-platform family of tools designed to build, test and package software.
+	= CMake is used to control the software compilation process using simple platform and compiler independent configuration files, and generate native makefiles and workspaces that can be used in the compiler environment of your choice.
+- Kinect2Grabber
+	= Kinect2Grabber is Grabber of PCL(Point Cloud Library) to retrieve the point cloud data from Kinect v2 using Kinect for Windows SDK v2.x.
+	= This Grabber only depend on Kinect for Windows SDK v2.x.
 
-		- Boost (C++ Semi Standard Library)
-		- Eigen (Matrix Library)
-		- FLANN (Nearest Neighbor Search Library)
-		- VTK (Visualization Library)
+#### Additional Dependencies of software listed above
+* These get installed using the PCL 1.8.0 prebuilt installer.
+
+- Boost (C++ Semi Standard Library)
+- Eigen (Matrix Library)
+- FLANN (Nearest Neighbor Search Library)
+- VTK (Visualization Library)
 
 
 
-> INSTALLATION:
-	
-	> Kinect for Windows SDK v2.0:
+### Installation
+
+#### Kinect for Windows SDK v2.0:
 		1.) Download the official Kinect for Windows SDK v2.0 from microsoft (https://www.microsoft.com/en-us/download/details.aspx?id=44561)
 		2.) Follow installation guide provided my microsoft.
 
-	> CMake 3.5.0
-		* Important Note: Although newer versions of CMake are likely to work, they have not been tested with.
-		** Newer CMake versions can be downloaded from CMake official website. (https://cmake.org).
+#### CMake 3.5.0
+* Important Note: Although newer versions of CMake are likely to work, they have not been tested with.
+* Newer CMake versions can be downloaded from CMake official website. (https://cmake.org).
 
-		1.) CMake version 3.5.0 can be downloaed from (https://cmake.org/files/v3.5/)
-		2.) Follow installation guide provided by CMake.
+1. CMake version 3.5.0 can be downloaed from (https://cmake.org/files/v3.5/)
+2. Follow installation guide provided by CMake.
 
-	> Point Cloud Library 1.8.0
-		* Important Note: As of 2017-4-30, PCL does not have a download for PCL version 1.8.0.
+#### Point Cloud Library 1.8.0
+* Important Note: As of 2017-4-30, PCL does not have a download for PCL version 1.8.0.
 
-		1.) You can download PreBuild Binary of PCL 1.8.0 from the following page (http://unanancyowen.com/?p=1794&lang=en)
-		2.) Set the following evironment variables of system and restart your machine:
-			Variable Name	|	Value
-			----------------------------------------------------------------------------------------
-			PCL_ROOT	|	C:\Program Files\PCL 1.8.0 (or C:\Program Files (x86)\PCL 1.8.0)
-			-----------------------------------------------------------------------------------------
-			Path		|	;%PCL_ROOT%\bin 
-					|	;%OPENNI2_REDIST64% (or %OPENNI2_REDIST%)
-		3.)
+1. You can download PreBuild Binary of PCL 1.8.0 from the following page (http://unanancyowen.com/?p=1794&lang=en)
+2. Set the following evironment variables of system and restart your machine:
 
-	> Kinect2Grabber
+	Variable Name | Value
+	--------------|-------------------------------------------------------------------------
+	PCL_ROOT      | C:\Program Files\PCL 1.8.0 (or C:\Program Files (x86)\PCL 1.8.0)
+	Path          | ;%PCL_ROOT%\bin
+                  | ;%OPENNI2_REDIST64% (or %OPENNI2_REDIST%)
+
+#### Kinect2Grabber
 		* Visual Processing module relies on this to get point clouds.
 		* This does not need to be installed as the VisualProcessingModule contains all of this.
-		* This is mostly a reference to respect author to allow for the most basic functionality in order to attain point clouds from Kinect SDK 2.0. 
+		* This is mostly a reference to respect author to allow for the most basic functionality in order to attain point clouds from Kinect SDK 2.0.
 
 		1.) Can be attained from (https://github.com/UnaNancyOwen/KinectGrabber).
 		2.) Generate the project using CMake
-		
-
-
-
-
-    
-```
