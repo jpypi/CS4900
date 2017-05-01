@@ -129,7 +129,8 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 ### Installation
 
 #### Kinect for Windows SDK v2.0:
-1. Download the official Kinect for Windows SDK v2.0 from microsoft (https://www.microsoft.com/en-us/download/details.aspx?id=44561)
+1. Download the official Kinect for Windows SDK v2.0 from microsoft<br/>
+   https://www.microsoft.com/en-us/download/details.aspx?id=44561
 2. Follow installation guide provided my microsoft.
 
 #### CMake 3.5.0
@@ -142,14 +143,14 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 #### Point Cloud Library 1.8.0
 * Important Note: As of 2017-4-30, PCL does not have a download for PCL version 1.8.0.
 
-1. You can download PreBuild Binary of PCL 1.8.0 from the following page (http://unanancyowen.com/?p=1794&lang=en)
-2. Set the following evironment variables of system and restart your machine:
+1. You can download PreBuild Binary of PCL 1.8.0 from the following page<br/>
+   http://unanancyowen.com/?p=1794&lang=en
+2. Modify the following evironment variables and restart your machine
 
 	Variable Name | Value
 	--------------|-------------------------------------------------------------------------
 	PCL_ROOT      | C:\Program Files\PCL 1.8.0 (or C:\Program Files (x86)\PCL 1.8.0)
-	Path          | ;%PCL_ROOT%\bin
-                  | ;%OPENNI2_REDIST64% (or %OPENNI2_REDIST%)
+	Path          | ;%PCL_ROOT%\bin;%OPENNI2_REDIST64% (or %OPENNI2_REDIST%)
 
 #### Kinect2Grabber
 * Visual Processing module relies on this to get point clouds.
