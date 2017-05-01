@@ -46,5 +46,25 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 - %DDS_ROOT%/bin/opendds_idl pc.idl
 - tao_idl -I$DDS_ROOT -I$TAO_ROOT/orbsvcs -Wb,export_macro=telemetryMessageCommon_Export -Wb,export_include=telemetryMessageCommon_Export.h pc.idl
 - perl %ACE_ROOT%/bin/mwc.pl -type vc14 pcm.mwc
-- 
+-
 - pcm.sln
+
+
+# Raspberry pi zero
+- raspbian jessie lite
+- TCP over USB
+    http://blog.gbaman.info/?p=791
+    http://blog.gbaman.info/?p=699
+- python 2
+- Wiring
+    - BCM pin numbering using pins:
+        13 for ____
+        18 for ____
+- Runs TCP Server on port 4433
+- Message format (using Big Endian):
+    struct {
+        int   status;
+        float angle;
+        float power;
+    }
+
