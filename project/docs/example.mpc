@@ -1,0 +1,28 @@
+project(*idl): opendds_face {
+  idlflags      += -Wb,export_include=exampleMessenger_Export.h \
+                   -Wb,export_macro=exampleMessenger_Export
+  dcps_ts_flags += -Wb,export_include=exampleMessenger_Export.h \
+                   -Wb,export_macro=exampleMessenger_Export
+  dynamicflags  += EXAMPLEMESSENGER_BUILD_DLL
+
+  TypeSupport_Files {
+    exampleMessage.idl
+  }
+
+  IDL_Files {
+    exampleMessageTypeSupport.idl
+  }
+
+  Source_Files {
+  }
+}
+
+project(*publisher) : dcps_rtps_udp, opendds_face {
+  exename   = publisher
+  after    += *idl
+  libs     += *idl
+
+  Source_Files {
+    example_source.cpp
+  }
+}

@@ -1,0 +1,32 @@
+/*
+ *
+ *
+ * Distributed under the OpenDDS License.
+ * See: http://www.opendds.org/license.html
+ */
+
+module TMessenger {
+
+// The pragmas register the struct for using in dcps messaging
+#pragma DCPS_DATA_TYPE "TMessenger::TMessage"
+#pragma DCPS_DATA_KEY "TMessenger::TMessage subject_id"
+
+  // This struct defines what messages look like
+  struct TMessage {
+    long   subject_id;
+    long   count;
+    float xacc;
+    float yacc;
+    float zacc;
+    float xgyro;
+    float ygyro;
+    float zgyro;
+    float xmag;
+    float ymag;
+    float zmag;
+    float abs_pressure;
+    float diff_pressure;
+    float pressure_alt;
+    float temperature;
+  };
+};
