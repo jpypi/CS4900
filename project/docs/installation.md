@@ -129,8 +129,8 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 ### Installation
 
 #### Kinect for Windows SDK v2.0:
-		1.) Download the official Kinect for Windows SDK v2.0 from microsoft (https://www.microsoft.com/en-us/download/details.aspx?id=44561)
-		2.) Follow installation guide provided my microsoft.
+1. Download the official Kinect for Windows SDK v2.0 from microsoft (https://www.microsoft.com/en-us/download/details.aspx?id=44561)
+2. Follow installation guide provided my microsoft.
 
 #### CMake 3.5.0
 * Important Note: Although newer versions of CMake are likely to work, they have not been tested with.
@@ -152,9 +152,9 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
                   | ;%OPENNI2_REDIST64% (or %OPENNI2_REDIST%)
 
 #### Kinect2Grabber
-		* Visual Processing module relies on this to get point clouds.
-		* This does not need to be installed as the VisualProcessingModule contains all of this.
-		* This is mostly a reference to respect author to allow for the most basic functionality in order to attain point clouds from Kinect SDK 2.0.
+* Visual Processing module relies on this to get point clouds.
+* This does not need to be installed as the VisualProcessingModule contains all of this.
+* This is mostly a reference to respect author to allow for the most basic functionality in order to attain point clouds from Kinect SDK 2.0.
 
-		1.) Can be attained from (https://github.com/UnaNancyOwen/KinectGrabber).
-		2.) Generate the project using CMake
+1. Can be attained from (https://github.com/UnaNancyOwen/KinectGrabber).
+2. Generate the project using CMake
