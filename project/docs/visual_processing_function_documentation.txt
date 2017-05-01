@@ -1,0 +1,363 @@
+-----------------------------------------------------------------------
+============================== main.cpp ==============================
+-----------------------------------------------------------------------
+
+> main.cpp
+
+	--- Functions ---
+	> void initializePlanarSegmentation(pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *plane_seg, pcl::ModelCoefficients::Ptr plane)
+	> void initializeCylinderSegmentation(pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *cylinder_seg, pcl::ModelCoefficients::Ptr cylinder)
+	> int planarSegmentation(PointCloudT::ConstPtr cloud, pcl::PointCloud<pcl::Normal>::Ptr cloud_normals, pcl::ModelCoefficients::Ptr plane, pcl::PointIndices::Ptr inliers_plane, pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *plane_seg )
+	> int cylinderSegmentation(PointCloudT::ConstPtr cloud, pcl::PointCloud<pcl::Normal>::Ptr cloud_normals, pcl::ModelCoefficients::Ptr cylinder, pcl::PointIndices::Ptr	inliers_cylinder, pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *cylinder_seg)
+	> void planarExtraction(PointCloudT::ConstPtr cloud, PointCloudT::Ptr plane_cloud_inliers, PointCloudT::Ptr plane_cloud_outliers, pcl::PointIndices::Ptr inliers_plane)
+	> void cylinderExtraction(PointCloudT::ConstPtr cloud, PointCloudT::Ptr cylinder_cloud_inliers, PointCloudT::Ptr cylinder_cloud_outliers, pcl::PointIndices::Ptr inliers_cylinder)
+	> void estimatePointNormals(PointCloudT::ConstPtr cloud, pcl::PointCloud<pcl::Normal>::Ptr cloud_normals, pcl::NormalEstimation<PointType, pcl::Normal>::Ptr normal_estimation)
+	> void filterNans(PointCloudT::ConstPtr unfiltered_cloud, PointCloudT::Ptr cloud)
+	> void downsamplePointCloud(PointCloudT::Ptr cloud, PointCloudT::Ptr downsampled_cloud)
+	> void filterMaxDistance(PointCloudT::Ptr cloud, PointCloudT::Ptr filtered_cloud)
+	> struct CoordinateXYZ computeCentroidPoint(PointCloudT::Ptr cloud)
+	> struct Obstacle computeObstacleInformation(PointCloudT::Ptr cloud)
+	> void statisticalOutlierFilter(PointCloudT::Ptr cloud)
+	> void euclidianClusterExtraction(PointCloudT::Ptr cloud, PointCloudT::Ptr cluster_cloud_1, PointCloudT::Ptr cluster_cloud_2)
+	> int pathPlanner(struct Obstacle obstacles[])
+	> int main(int argc, char* argv[])
+
+
+-----------------------------------------------------------------------
+
+Function: initializePlanarSegmentation
+> Description
+This function initializes a SACSegmentationFromNormals and
+a ModelCoefficients object which will be used later for
+plane segmentation. It configures those objects based on
+initialization information in this funcion.
+
+> Arguments
+[IN/OUT] pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *plane_seg
+[IN/OUT] pcl::ModelCoefficients::Ptr plane
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: initializeCylinderSegmentation
+> Description
+This function initializes a SACSegmentationFromNormals and 
+a ModelCoefficients object which will be used later for
+Cylinder segmentation. It configures those objects based on 
+initialization information in this funcion.
+
+> Arguments
+[IN/OUT] pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *cylinder_seg
+[IN/OUT] pcl::ModelCoefficients::Ptr cylinder
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+/*
+Function: planarSegmentation
+> Description
+This function segments a plane from a given point cloud
+and Normalized point cloud, and a plane segmenatation
+model.
+
+> Arguments
+[IN] PointCloudT::ConstPtr cloud
+- Input cloud.
+[IN] pcl::PointCloud<pcl::Normal>::Ptr cloud_normals
+- Input point cloud normals to input cloud.
+[IN] pcl::ModelCoefficients::Ptr plane
+- Model of a plane to search for to be segmented.
+[OUT] pcl::PointIndices::Ptr inliers_plane
+- Indinces representing the plane segmented.
+[IN] pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *plane_seg
+- Object used for plane segmentation containing plane
+segmentation filter.
+
+
+> Returns:
+- (int) Error code of function.
+*/
+
+-----------------------------------------------------------------------
+
+/*
+Function: cylinderSegmentation
+> Description
+This function segments a cylinder from a given point cloud 
+and Normalized point cloud, and a cylinder segmenatation 
+model.
+
+> Arguments
+[IN] PointCloudT::ConstPtr cloud
+- Input cloud.
+[IN] pcl::PointCloud<pcl::Normal>::Ptr cloud_normals
+- Input point cloud normals to input cloud.
+[IN] pcl::ModelCoefficients::Ptr cylinder
+- Model of a cylinder to search for to be segmented.
+[OUT] pcl::PointIndices::Ptr inliers_cylinder
+- Indinces representing the cylinder segmented.
+[IN] pcl::SACSegmentationFromNormals<PointType, pcl::Normal> *cylinder_seg
+- Object used for cylinder segmentation containing cylinder
+	segmentation filter.
+
+
+> Returns:
+- (int) Error code of function.
+*/
+
+-----------------------------------------------------------------------
+
+/*
+Function: planarExtraction
+> Description
+This function extracts a plane from an input cloud and 
+stores the plane inliers and plane outliers in new seperate 
+point clouds. The point indices representing the plane 
+inliers are provided as an arg.
+
+> Arguments
+[IN] PointCloudT::ConstPtr cloud
+- Input cloud.
+[OUT] PointCloudT::ConstPtr plane_cloud_inliers
+- Point cloud with the plane.
+[OUT] PointCloudT::ConstPtr plane_cloud_outliers
+- Point cloud without the plane.
+[IN] pcl::PointIndices::Ptr inliers_plane
+- Point indinces of the plane that needs to be extracted.
+
+> Returns:
+N/A
+*/
+
+-----------------------------------------------------------------------
+
+/*
+Function: cylinderExtraction
+> Description
+This function extracts a cylinder from an input cloud and
+stores the cylinder inliers and cylinder outliers in new seperate
+point clouds. The point indices representing the cylinder
+inliers are provided as an arg.
+
+> Arguments
+[IN] PointCloudT::ConstPtr cloud
+- Input cloud.
+[OUT] PointCloudT::ConstPtr cylinder_cloud_inliers
+- Point cloud with the cylinder.
+[OUT] PointCloudT::ConstPtr cylinder_cloud_outliers
+- Point cloud without the cylinder.
+[IN] pcl::PointIndices::Ptr inliers_cylinder
+- Point indinces of the cylinder that needs to be extracted.
+
+> Returns:
+N/A
+*/
+
+-----------------------------------------------------------------------
+
+Function: estimatePointNormals
+> Description
+This function calculates an estimate of the normalized 
+point values in a given point cloud.
+
+> Arguments
+[IN] PointCloudT::ConstPtr cloud
+- Input cloud.
+[OUT] pcl::PointCloud<pcl::Normal>::Ptr cloud_normals
+- Output pointcloud with point normals as points.
+[IN] pcl::NormalEstimation<PointType, pcl::Normal>::Ptr normal_estimation
+- Normal Estimation object.
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: filterNans
+> Description
+This function removes invalid (NaN) points from an input 
+point cloud.
+
+> Arguments
+[IN] PointCloudT::ConstPtr unfiltered_cloud
+- Input cloud.
+[OUT] PointCloudT::Ptr cloud
+- Output cloud after NaNs are removed.
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: downsamplePointCloud
+> Description
+This function uses a voxel grid to downsample the input 
+point cloud.
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+- Input cloud.
+[OUT] PointCloudT::Ptr filtered_cloud
+- Output cloud after downsampling.
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: filterMaxDistance
+> Description
+This function filters the input cloud up to a set min and 
+max depth values. Basically removes anything closer/beyond 
+the set bounds
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+- Input cloud.
+[OUT] PointCloudT::Ptr filtered_cloud
+- Output cloud after min/max distance is filtered.
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: computeCentroidPoint
+> Description
+This function computes the centroid point from an input 
+point cloud and stores it in a CoordinateXYZ struct.
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+- Input cloud that represents some obstacle.
+
+> Returns:
+(struct CoordinateXYZ)
+- An CoordinateXYZ struct which nicely stores X,Y,Z values 
+	of the centroid point of the input cloud.
+
+-----------------------------------------------------------------------
+
+Function: computeObstacleInformation
+> Description
+This function creates an Obstacle struct given an input
+point cloud and returns the corresponding Obstacle struct 
+representing that point cloud.
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+- Input cloud that represents some obstacle.
+
+> Returns:
+(struct Obstacle)
+	- An obstacle containing information from point cloud.
+
+-----------------------------------------------------------------------
+
+Function: statisticalOutlierFilter
+> Description
+This function uses the input cloud to extract outlier 
+indicies. Extracts a point cloud without the indinces and 
+stores them in a temporary point cloud which overwrites 
+the input point cloud provided through args.
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+- Input cloud that requires outliers to be removed
+
+> Returns:
+N/A
+
+-----------------------------------------------------------------------
+
+Function: euclidianClusterExtraction
+> Description
+This function extracts up to MAX_OBSTACLES clusters from 
+input cloud and stores each cluster in a PointCloudT
+pointer provided via arguments (cluster_cloud_n).
+
+> Arguments
+[IN] PointCloudT::Ptr cloud
+	- Input cloud that requires euclidian cluster extraction
+[OUT] PointCloudT::Ptr cluster_cloud_1
+	- Output cloud
+[OUT] PointCloudT::Ptr cluster_cloud_2
+
+> Returns:
+	N/A
+
+-----------------------------------------------------------------------
+
+Function: pathPlanner
+> Description
+This function calculates a very basic path towards the 
+center of the largest point cloud cluster while taking in 
+account all other obstacles and stopping if something is in 
+the way.
+- This should only be a temporary testing function until a 
+	full path planning module is implemented.
+
+> Arguments:
+[IN] struct Obstacle obstacles[]
+	- An array of Obstacle structs.
+[OUT]: Error code
+
+> Returns:
+	- (int) Error code of function.
+
+-----------------------------------------------------------------------
+
+
+
+
+-----------------------------------------------------------------------
+----------------------------- ToolBox.h--------------------------------
+-----------------------------------------------------------------------
+
+	* Contains objects and other structures to aid program functionality.
+	- PointCloudWriter
+		- An abstracted object making writing point clouds to file easier.
+	- Timer
+		- Just a useful tool for testing to time a functions runtime.
+		
+-----------------------------------------------------------------------		
+----------------------------- shared.h---------------------------------
+-----------------------------------------------------------------------
+
+	* Contains important information regarding vehicle, types of points, types of point clouds, and defineds obstacle and coordinate structures.
+	
+	> typedef
+		- PointType
+		- PointCloudT
+
+	> Structs
+		- Obstacle
+		- CoordinateXYZ
+	
+	> defines
+		- VEHICLE_WIDTH
+		- VEHICLE_LENGTH
+		- VEHICLE_HIGHT
+		- VEHICLE_LEFT_EDGE
+		- VEHICLE_RIGHT_EDGE
+		- VEHICLE_DEGREES_MAX_LEFT
+		- VEHICLE_DEGREES_MAX_RIGHT
+		- PI
+
+
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+-----------------------------------------------------------------------
+
+****
+Remarks:
+
+*cylinder processing needs work. 
+Currently cylinderInitialization, cylinderSegmentation, and cylinderExtraction
+functions are not being used due to incorrect cylinder detection.
+
+****
