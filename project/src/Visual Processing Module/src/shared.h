@@ -1,3 +1,10 @@
+/*
+Author: Aleksandr Dobrev
+
+Last major update: 2017-05-01
+*/
+
+
 #pragma once
 
 typedef pcl::PointXYZ PointType;

@@ -1,3 +1,12 @@
+/*
+Author: Aleksandr Dobrev
+
+Last major update: 2017-04-25
+
+
+*/
+
+
 #include <iostream>
 #include <pcl/io/io.h>
 #include <pcl/io/pcd_io.h>
