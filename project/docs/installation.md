@@ -72,8 +72,8 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 
 ## Raspberry pi zero
 - raspbian jessie lite
-- TCP over USB
-    http://blog.gbaman.info/?p=791
+- TCP over USB<br/>
+    http://blog.gbaman.info/?p=791<br/>
     http://blog.gbaman.info/?p=699
 - python 2
 - Wiring
