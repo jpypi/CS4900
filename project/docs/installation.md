@@ -76,12 +76,14 @@ https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 - python 2
 - Wiring
     - BCM pin numbering using pins:
-        13 for ____
-        18 for ____
+        - 13 for steering servo
+        - 18 for ESC throttle
 - Runs TCP Server on port 4433
 - Message format (using Big Endian):
+```
     struct {
         int   status;
         float angle;
         float power;
     }
+```
