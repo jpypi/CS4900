@@ -43,27 +43,29 @@ All DDS executables must be run from a command prompt that has run setenv.cmd.
 ## Pixhawk
 
 ### Pixhawk Config vars (can set via QCGroundControl)
-	https://pixhawk.org/firmware/parameters
+https://pixhawk.org/firmware/parameters
+
 ### Radio Calibration For RC Car
 #### RC1
-MAX: 1889
-MIN: 117
-TRIM: 1503
+    MAX: 1889
+    MIN: 117
+    TRIM: 1503
 
 #### RC4
-MAX: 1991
-MIN: 1007
-TRIM: 1499
+    MAX: 1991
+    MIN: 1007
+    TRIM: 1499
 
 ### To use Pixhawk without an RC radio (for autonomous mode)
-COM_RC_IN_MODE: 2 (Virtual RC by Joystick)
+COM_RC_IN_MODE: 2 (Virtual RC by Joystick)<br/>
 https://groups.google.com/forum/#!topic/px4users/ZdJPo0ECIho
 
-SYS_COMPANION: Companion Link (921600 baud)
+
+SYS_COMPANION: Companion Link (921600 baud)<br/>
 https://dev.px4.io/offboard-control.html
 
 ### Disable Airspeed Indicator Check
-CBRK_AIRSPD_CHK: 162128
+CBRK_AIRSPD_CHK: 162128<br/>
 https://groups.google.com/forum/#!topic/px4users/RL6mDPJsbHk
 
 ---
